@@ -25,8 +25,8 @@ const FormContainer = () => {
           <label htmlFor="signup" className="slide signup" onClick={handleSignupClick}>Signup</label>
           <div className="slider-tab"></div>
         </div>
-        <div className="form-inner">
-          <form action="#" className={`login ${isLoginActive ? 'active' : ''}`}>
+        <div className={`form-inner ${isLoginActive ? 'login-active' : 'signup-active'}`}>
+          <form action="#" className={`form login ${isLoginActive ? 'active' : ''}`}>
             <div className="field">
               <input type="text" placeholder="Email Address" required />
             </div>
@@ -39,8 +39,8 @@ const FormContainer = () => {
               <input type="submit" value="Login" />
             </div>
             <div className="signup-link">Not a member? <a href="#" onClick={handleSignupClick}>Signup now</a></div>
-          </form>
-          <form action="#" className={`signup ${!isLoginActive ? 'active' : ''}`}>
+          </form>  
+          <form action="#" className={`form signup ${!isLoginActive ? 'active' : ''}`}>
             <div className="field">
               <input type="text" placeholder="Email Address" required />
             </div>
@@ -54,6 +54,7 @@ const FormContainer = () => {
               <div className="btn-layer"></div>
               <input type="submit" value="Signup" />
             </div>
+            <div className="signup-link">Already have an account? <a href="#" onClick={handleLoginClick}>Login now</a></div>
           </form>
         </div>
       </div>
